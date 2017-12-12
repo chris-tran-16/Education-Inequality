@@ -23,10 +23,9 @@ To discover important features we consider the problem of education gaps as a cl
 
 \section{Related Work} \label{sec:relwork}
 
-Education in general is a well studied problem in the social sciences field. From the literature, child achievement can be attributed to a number of factors such as socioeconomic status or resources available at school. Studies have been done on the effect of parental education as well as family income on educational achievement on children \cite{parentinfluence2005}. Davis-Kean found that socioeconomic factors play an indirect role to a child's academic achievement, such as parents' belief and behaviors. Parents' education level was also found to be an important factor when looking at school children. Further studies done in the school performance of Australia \cite{australiaschool2004} attribute five main factors which affect school performance: previous student attainment, socioeconomic status of the students, school size\footnote{Reports show that as school size falls below 1,000 students, average student attainment falls too.} (based on number of students), location type (rural or urban), and school sector (public, private, or Catholic). Furthermore, studies have show the importance of higher education attainment and equal distribution of education help to make income distribution more equal \cite{income2002greg, income2015breen}. An article published on NPR \cite{npr2016} studies the differences in education spending throughout the United States. They show that spending on education varies widely in the U.S., and look at the poor condition that some schools are in. Figure \ref{fig:spending} shows the United States spending per student for each school district. Studies have shown that spending per student have an affect on educational attainment \cite{spending2015, spending2017}, however, in \ref{sec:data} we see that this may not be the case when measuring average subject proficiency levels per school.
+Education in general is a well studied problem in the social sciences field. From the literature, child achievement can be attributed to a number of factors such as socioeconomic status or resources available at school. Studies have been done on the effect of parental education as well as family income on educational achievement on children \cite{parentinfluence2005}. Davis-Kean found that socioeconomic factors play an indirect role to a child's academic achievement, such as parents' belief and behaviors. Parents' education level was also found to be an important factor when looking at school children. Further studies done in the school performance of Australia \cite{australiaschool2004} attribute five main factors which affect school performance: previous student attainment, socioeconomic status of the students, school size\footnote{Shows that as school size falls below 1,000 students, average student attainment falls too.} (based on number of students), location type (rural or urban), and school sector (public, private, or Catholic). Furthermore, studies have show the importance of higher education attainment and equal distribution of education help to make income distribution more equal \cite{income2002greg, income2015breen}. An article published on NPR \cite{npr2016} studies the differences in education spending throughout the United States. They show that spending on education varies widely in the U.S., and look at the poor condition that some schools are in. Figure \ref{fig:spending} shows the United States spending per student for each school district. Studies have shown that spending per student have an affect on educational attainment \cite{spending2015, spending2017}, however, in \ref{sec:data} we see that this may not be the case when measuring average subject proficiency levels per school.
 
-Feature importance and selection algorithms are important part in discovering what factors lead to good predictions. Trees are a very simple and interpretable method for feature selection. Random forest has been shown to be an effective method in ranking the importance of variables in a natural way \cite{breiman2001random}, and is a very powerful ensemble learning method. Henderson et al. \cite{recursive2011} present a feature extraction algorithm that combines local features with neighborhood features to output regional features. An unsupervised feature selection used on networked data was developed by Li et al. \cite{robustfeature2016} that is robust to noisy links. Much work has been done on classifying networked data, and algorithms have shown in cases when nodes are not independent, collective classification performs better than traditional methods \cite{collective2008}. 
-
+Feature importance and selection algorithms are important part in discovering what factors lead to good predictions. Trees are a very simple and interpretable method for feature selection. Random forest has been shown to be an effective method in ranking the importance of variables in a natural way \cite{breiman2001random}, and is a very powerful ensemble learning method. Henderson et al. \cite{recursive2011} present a feature extraction algorithm that combines local features with neighborhood features to output regional features. An unsupervised feature selection used on networked data was developed by Li et al. \cite{robustfeature2016} that is robust to noisy links. Much work has been done on classifying networked data, and algorithms have shown in cases when nodes are not independent, collective classification performs better than traditional methods \cite{collective2008}.
 
 \section{Problem Description} \label{sec:problem}
 
@@ -148,6 +147,20 @@ To assess the performance of schools we use data collected by the U.S. Departmen
 	\label{fig:diff}
 \end{figure}
 
+%\begin{figure}
+%	\begin{subfigure}{.2325\textwidth}
+%		\includegraphics[width=\linewidth]{images/prof_diff}
+%		\caption{Distribution for the difference of math and reading proficiency level. Dashed line shows the median difference between subject proficiency level.}
+%	\end{subfigure}
+%	\hspace{\fill}  % for some horizontal separation 
+%	\begin{subfigure}{.2325\textwidth}
+%		\includegraphics[width=\linewidth]{images/prof_avg}
+%		\caption{Distribution for the average between math and reading proficiency levels. Red dashed line is $Q_1$, blue dashed line is the median, and green dashed line is $Q_3$.}
+%	\end{subfigure}
+%	\caption{Distribution of proficiency levels for both math and reading/language arts. Dashed line shows the median proficiency level.}
+%	\label{fig:profavg}
+%\end{figure}
+
 The datasets discussed previously are self-reported by states and school districts. Naturally this will lead to unreported information or missing values in the school universe and district fiscal information. To deal with this issue, we drop entries with missing values. In the case of the school proficiency dataset, entries with a suppressed value are removed, along with schools with less than 16 students to avoid the large ranges in proficiency created by using a schools with low number of students. In addition, the school universe dataset has categorical columns in which a valid value is "N" for "not applicable." We treat these values as a separate category when training our classifiers. Furthermore, the district fiscal information has entries that have a value of 0 in the total revenue column and -1 for missing data. Since we consider district spending an important feature \cite{spending2015,spending2017} we drop entries that do not report, or are missing revenue information. Finally, there are numerous extraneous variables in the data file, so we remove these extraneous information for our prediction task. Extraneous variables include things like phone number, four digit zip code, and other unimportant identifying factors of schools.
 
 \begin{figure} 
@@ -205,23 +218,21 @@ Furthermore, comparing our map of test scores to Figure \ref{fig:poverty}, we ca
 
 \subsection{Evaluation} \label{sec:evaluation}
 
-We perform a binary classification task on our dataset to predict school performance. Using the labels that we discussed in Section \ref{sec:processing}, we perform binary classification on positive and negative classes. The statistics on the class distribution is shown in Table \ref{tab:classes}. The classes are relatively balance due to the way to split the samples into the different classes. In our experiments we have a total of 36,295 observations. To evaluate our models, we split the dataset into train and test using an 80-20 split. For our baseline method, we use a traditional machine learning algorithm, a Random Forest classifier with 50 estimators, implemented using scikit-learn \cite{scikit-learn}. In this scenario, schools are treated independently of location and the whole training set is used to classify each test instance. For our proposed solution, we set $\rho = .2$ so that we keep the closest 20\% schools in the neighborhood, $N(s_i)$, of each school $s_i$. Our idea is to limit the effect on prediction for schools that are far away, which can be slightly supported by the observations made in Section \ref{sec:analysis}, where location of the school seems to matter within the state. For each unobserved node $s_i' \in S_u$ we perform the Gibbs sampling method as discussed in Section \ref{sec:problem} using a Random Forest classifier with 50 estimators. The burn in stage runs for 10 iterations and the iterative classification step runs for 50 iterations. We evaluate the models using accuracy and f-1 score. The results are shown in Table \ref{tab:results}.
+\begin{figure*}
+	\begin{subfigure}{.45\textwidth}
+		\includegraphics[width=\linewidth]{images/features_rf}
+		\caption{Random Forest}
+	\end{subfigure}
+	\hspace{\fill}
+	\begin{subfigure}{.45\textwidth}
+		\includegraphics[width=\linewidth]{images/features_gs}
+		\caption{Gibbs Sampling (RF)}
+	\end{subfigure}
+	\caption{Top 10 features based on gini importance for Random Forest and Gibbs sampling (RF) model.}
+	\label{fig:features}
+\end{figure*}
 
-\begin{table}
-	\resizebox{7cm}{!}{
-	\begin{tabular}{ccc}
-		\toprule
-		Model & Accuracy & F-1 Score\\
-		\midrule
-		Random Forest & 0.9702 & 0.9695 \\
-		Gibbs sampling (RF) & 0.9653 & 0.9648 \\
-		\bottomrule
-		\\
-	\end{tabular}
-	}
-	\caption{Results on binary classification task using Random forest with 50 estimators and Gibbs sampling using Random Forest (RF) as the local classifier.}
-	\label{tab:results}
-\end{table}
+We perform a binary classification task on our dataset to predict school performance. Using the labels that we discussed in Section \ref{sec:processing}, we perform binary classification on positive and negative classes. The statistics on the class distribution is shown in Table \ref{tab:classes}. The classes are relatively balance due to the way to split the samples into the different classes. In our experiments we have a total of 36,295 observations. To evaluate our models, we split the dataset into train and test using an 80-20 split. For our baseline method, we use a traditional machine learning algorithm, a Random Forest classifier with 50 estimators, implemented using scikit-learn \cite{scikit-learn}. In this scenario, schools are treated independently of location and the whole training set is used to classify each test instance. For our proposed solution, we set $\rho = .2$ so that we keep the closest 20\% schools in the neighborhood, $N(s_i)$, of each school $s_i$. Our idea is to limit the effect on prediction for schools that are far away, which can be slightly supported by the observations made in Section \ref{sec:analysis}, where location of the school seems to matter within the state. For each unobserved node $s_i' \in S_u$ we perform the Gibbs sampling method as discussed in Section \ref{sec:problem} using a Random Forest classifier with 50 estimators. The burn in stage runs for 10 iterations and the iterative classification step runs for 50 iterations. We evaluate the models using accuracy and f-1 score. The results are shown in Table \ref{tab:results}.
 
 Using the classifiers discussed, we wish to see which features in our dataset contribute more to prediction. To do this, we measure the importance of a feature by using the "gini importance" described in \cite{breiman1984classification}. This is defined as the total decrease in node impurity for each feature weighted by the probability of reaching the node averaged over all trees in the ensemble, normalized to be between 0 and 1. For the Gibbs sampling model, we average the gini importance of each feature over all iterations in the classification step. Figure \ref{fig:features} shows the plot of the top 10 features with their gini importance. We detail these results in Table \ref{tab:features}.
 
@@ -229,25 +240,27 @@ Table \ref{tab:features} give a description of some of the top features based on
 
 \section{Discussion} \label{sec:discuss}
 
-\begin{figure}
-	\begin{subfigure}{.2325\textwidth}
-		\includegraphics[width=\linewidth]{images/features_rf}
-		\caption{Random Forest}
-	\end{subfigure}
-	\hspace{\fill}
-	\begin{subfigure}{.2325\textwidth}
-		\includegraphics[width=\linewidth]{images/features_gs}
-		\caption{Gibbs Sampling (RF)}
-	\end{subfigure}
-	\caption{Top 10 features based on gini importance for Random Forest and Gibbs sampling (RF) model.}
-	\label{fig:features}
-\end{figure}
-
 From Figures \ref{fig:poverty} and \ref{fig:spending}, we see the inequality in district spending, and that poverty levels vary widely throughout the united states. Comparing our map of test scores, we can see that there is some relation to the poverty level and performance of schools, most notably in Indiana and Ohio, where the majority of schools perform well and have relatively low poverty levels. This is further enhanced by the children poverty rate being a feature with a top gini importance ranking. From our results on feature ranking, we also see that some fiscal information for districts, as well as school federal programs such as NSLP are predictive of school performance. In our proposed model, we see that the number of students is predictive in proficiency levels. This support some findings done in the Australia school study by Lamb et al. \cite{australiaschool2004}, where one of the identified five factors that affect school performance was the size of the school. This result could potentially be generalized too United States schools as well. Additionally, it seems that demographics also play a role in predicting school performance. This may be in part due to different demographics living in different conditions, which may correlate with the poverty level in various districts, however, we do not analyze these conditions in this work. Furthermore, our gini importance values are very low. This may be because our feature space is too large for our task, so each feature has less importance overall. Another possible reason could be that all features are important relative to the feature space, and are required for predicting school performance. A possible next step would be to perform experiments using the top-\textit{k} features, and see how it affects performance of the classifiers. Finally, we should measure feature importance on a local classifier level instead of averaging over all local classifiers, to get a better view on feature importance regionally.
+
+\begin{table}
+	\resizebox{7cm}{!}{
+		\begin{tabular}{ccc}
+			\toprule
+			Model & Accuracy & F-1 Score\\
+			\midrule
+			Random Forest & 0.9702 & 0.9695 \\
+			Gibbs sampling (RF) & 0.9653 & 0.9648 \\
+			\bottomrule
+			\\
+		\end{tabular}
+	}
+	\caption{Results on binary classification task using Random forest with 50 estimators and Gibbs sampling using Random Forest (RF) as the local classifier.}
+	\label{tab:results}
+\end{table}
 
 From our classification results, we see that the traditional machine learning model is more than sufficient to predict school performance and even performs better than the collective classification model. One possible reason could be attributed to the value of $\rho$ that was selected, as this was not tuned precisely to give better results. It is possible that including less or more nodes in the neighborhood of a school could affect prediction results. Although our model did not perform better than a traditional Random Forest model, we see that classification methods can perform very well on determining whether a school is performing well or poorly. However, one caveat is that the selected schools were on the upper or lower end of the distribution for proficiency level. From these results it is not clear what would happen for schools that are in the "middle". A potential next step would be to incorporate more schools in the final dataset to see the effect on adding schools with closer levels of proficiency, and see if a classification task can be performed in this scenario. One hypothesis is that a relational method would perform better in this instance, since adding more schools blurs the lines between differences of well and poor performing schools. In our proposed relational classification method, schools would only be classified based on local performance, rather than globally such as in a traditional method.
 
-One direction that we did not incorporate into our work is applying traditional and network based feature selection algorithms. As we previously discussed, gini importances of our features were pretty low, so it may be beneficial to select a subset of features for classification, and study the affect it has on the models. In this way we can better generalize this prediction task.
+One direction that we did not incorporate into our work is applying traditional and network based feature selection algorithms. As we previously discussed, gini importances of our features were pretty low, so it may be beneficial to select a subset of features for classification, and study the affect it has on the models. In this way we can better generalize this prediction task. Finally, we would like to study and combine multiple reporting school years in order to analyze changes in performance by year per school.
 
 \begin{table}
 	\resizebox{8.45cm}{!}{
@@ -264,7 +277,9 @@ One direction that we did not incorporate into our work is applying traditional 
 			\\ \\
 			C38 \& C08 & Features dealing with State Revenue.
 			\\ \\
-			WHITE \& WHALF & Number of White, non-Hispanic students and female.
+			WHITE \& WHALF & Number of total White, non-Hispanic students and number of total White, female students.
+			\\ \\
+			BLACK \& BLACKM & Number of total Black students, and number of total Black, male students.
 			\\\bottomrule
 			\\
 		\end{tabular}
@@ -275,4 +290,4 @@ One direction that we did not incorporate into our work is applying traditional 
 
 \section{Conclusion} \label{sec:conclusion}
 
-In this work we have done an analysis on school performance in the United States. Our goal was to determine if school performance can be predicted using machine learning and to find key features that are predictive of school performance. From our results, we see that in a dataset with clear division of school performance, we are able to predict proficiency levels with high accuracy. We also verify that poverty levels are important in school performance levels, as well as some school logistics and administrative information. In our work, we took a subset of the data from the top and bottom performing schools. For future steps, we would like to incorporate a larger percentage of the dataset to see the effect on performance of our models, since incorporating more data blurs the differences of schools that perform well and that perform poorly. Additionally, we would like to incorporate some feature selection methods, and to study the effects of using different features on the performance of the models.
+In this work we have done an analysis on school performance in the United States. Our goal was to determine if school performance can be predicted using machine learning and to find key features that are predictive of school performance. From our results, we see that in a dataset with clear division of school performance, we are able to predict proficiency levels with high accuracy. We also verify that poverty levels are important in school performance levels, as well as some school logistics and administrative information. In our work, we took a subset of the data from the top and bottom performing schools. For future steps, we would like to incorporate a larger percentage of the dataset to see the effect on performance of our models, since incorporating more data blurs the differences of schools that perform well and that perform poorly. Additionally, we would like to incorporate some feature selection methods, and to study the effects of using different features on the performance of the models. Finally, we can utilize multiple reporting school years in our model. All code used in this work is available on my github\footnote{\href{https://github.com/chris-tran-16/Education-Inequality}{https://github.com/chris-tran-16/Education-Inequality}}.
