@@ -1,0 +1,217 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{14}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{}, \showDOI{}, and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showDOI}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showDOI #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showDOI      \undefined \def \showDOI       #1{#1}\fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[\protect\citeauthoryear{Breen and Chung}{Breen and Chung}{2015}]%
+        {income2015breen}
+\bibfield{author}{\bibinfo{person}{Richard Breen} {and} \bibinfo{person}{Inkwan
+  Chung}.} \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Income Inequality and Education.}
+\newblock \bibinfo{journal}{{\em Sociological Science\/}}  \bibinfo{volume}{2}
+  (\bibinfo{year}{2015}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Breiman}{Breiman}{2001}]%
+        {breiman2001random}
+\bibfield{author}{\bibinfo{person}{Leo Breiman}.}
+  \bibinfo{year}{2001}\natexlab{}.
+\newblock \showarticletitle{Random forests}.
+\newblock \bibinfo{journal}{{\em Machine learning\/}} \bibinfo{volume}{45},
+  \bibinfo{number}{1} (\bibinfo{year}{2001}), \bibinfo{pages}{5--32}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Breiman, Friedman, Stone, and Olshen}{Breiman
+  et~al\mbox{.}}{1984}]%
+        {breiman1984classification}
+\bibfield{author}{\bibinfo{person}{Leo Breiman}, \bibinfo{person}{Jerome
+  Friedman}, \bibinfo{person}{Charles~J Stone}, {and}
+  \bibinfo{person}{Richard~A Olshen}.} \bibinfo{year}{1984}\natexlab{}.
+\newblock \bibinfo{booktitle}{{\em Classification and regression trees}}.
+\newblock \bibinfo{publisher}{CRC press}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Davis-Kean}{Davis-Kean}{2005}]%
+        {parentinfluence2005}
+\bibfield{author}{\bibinfo{person}{Pamela~E Davis-Kean}.}
+  \bibinfo{year}{2005}\natexlab{}.
+\newblock \showarticletitle{The influence of parent education and family income
+  on child achievement: the indirect role of parental expectations and the home
+  environment.}
+\newblock \bibinfo{journal}{{\em Journal of family psychology\/}}
+  \bibinfo{volume}{19}, \bibinfo{number}{2} (\bibinfo{year}{2005}),
+  \bibinfo{pages}{294}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Glander}{Glander}{[n. d.]}]%
+        {ccdschool}
+\bibfield{author}{\bibinfo{person}{Mark Glander}.} \bibinfo{year}{[n.
+  d.]}\natexlab{}.
+\newblock \showarticletitle{Documentation to the NCES Common Core of Data
+  Public Elementary/Secondary School Universe Survey: School Year 2013–14
+  Provisional Version 2a}.
+\newblock  (\bibinfo{year}{[n. d.]}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Gregorio and Lee}{Gregorio and Lee}{2002}]%
+        {income2002greg}
+\bibfield{author}{\bibinfo{person}{Jose~De Gregorio} {and}
+  \bibinfo{person}{Jong-Wha Lee}.} \bibinfo{year}{2002}\natexlab{}.
+\newblock \showarticletitle{Education and income inequality: new evidence from
+  cross-country data}.
+\newblock \bibinfo{journal}{{\em Review of income and wealth\/}}
+  \bibinfo{volume}{48}, \bibinfo{number}{3} (\bibinfo{year}{2002}),
+  \bibinfo{pages}{395--416}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Henderson, Gallagher, Li, Akoglu, Eliassi-Rad,
+  Tong, and Faloutsos}{Henderson et~al\mbox{.}}{2011}]%
+        {recursive2011}
+\bibfield{author}{\bibinfo{person}{Keith Henderson}, \bibinfo{person}{Brian
+  Gallagher}, \bibinfo{person}{Lei Li}, \bibinfo{person}{Leman Akoglu},
+  \bibinfo{person}{Tina Eliassi-Rad}, \bibinfo{person}{Hanghang Tong}, {and}
+  \bibinfo{person}{Christos Faloutsos}.} \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{It's who you know: graph mining using recursive
+  structural features}. In \bibinfo{booktitle}{{\em Proceedings of the 17th ACM
+  SIGKDD international conference on Knowledge discovery and data mining}}.
+  ACM, \bibinfo{pages}{663--671}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Hyman}{Hyman}{2017}]%
+        {spending2017}
+\bibfield{author}{\bibinfo{person}{Joshua Hyman}.}
+  \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Does money matter in the long run? Effects of
+  school spending on educational attainment}.
+\newblock \bibinfo{journal}{{\em American Economic Journal: Economic Policy\/}}
+  \bibinfo{volume}{9}, \bibinfo{number}{4} (\bibinfo{year}{2017}),
+  \bibinfo{pages}{256--280}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Jackson, Johnson, and Persico}{Jackson
+  et~al\mbox{.}}{2015}]%
+        {spending2015}
+\bibfield{author}{\bibinfo{person}{C~Kirabo Jackson}, \bibinfo{person}{Rucker~C
+  Johnson}, {and} \bibinfo{person}{Claudia Persico}.}
+  \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Boosting educational attainment and adult
+  earnings}.
+\newblock \bibinfo{journal}{{\em Education Next\/}} \bibinfo{volume}{15},
+  \bibinfo{number}{4} (\bibinfo{year}{2015}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Lamb, Rumberger, Jesson, and Teese}{Lamb
+  et~al\mbox{.}}{2004}]%
+        {australiaschool2004}
+\bibfield{author}{\bibinfo{person}{Stephen Lamb}, \bibinfo{person}{Russell~W
+  Rumberger}, \bibinfo{person}{Da Jesson}, {and} \bibinfo{person}{R Teese}.}
+  \bibinfo{year}{2004}\natexlab{}.
+\newblock \showarticletitle{School performance in Australia: Results from
+  analyses of school effectiveness. Report for the Victorian Department of
+  Premier and Cabinet}.
+\newblock \bibinfo{journal}{{\em Melbourne, Centre for Post-compulsory
+  Education and Lifelong Learning, University of Melbourne\/}}
+  (\bibinfo{year}{2004}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Li, Hu, Wu, and Liu}{Li et~al\mbox{.}}{2016}]%
+        {robustfeature2016}
+\bibfield{author}{\bibinfo{person}{Jundong Li}, \bibinfo{person}{Xia Hu},
+  \bibinfo{person}{Liang Wu}, {and} \bibinfo{person}{Huan Liu}.}
+  \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Robust unsupervised feature selection on networked
+  data}. In \bibinfo{booktitle}{{\em Proceedings of the 2016 SIAM International
+  Conference on Data Mining}}. SIAM, \bibinfo{pages}{387--395}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Pedregosa, Varoquaux, Gramfort, Michel,
+  Thirion, Grisel, Blondel, Prettenhofer, Weiss, Dubourg, Vanderplas, Passos,
+  Cournapeau, Brucher, Perrot, and Duchesnay}{Pedregosa et~al\mbox{.}}{2011}]%
+        {scikit-learn}
+\bibfield{author}{\bibinfo{person}{F. Pedregosa}, \bibinfo{person}{G.
+  Varoquaux}, \bibinfo{person}{A. Gramfort}, \bibinfo{person}{V. Michel},
+  \bibinfo{person}{B. Thirion}, \bibinfo{person}{O. Grisel},
+  \bibinfo{person}{M. Blondel}, \bibinfo{person}{P. Prettenhofer},
+  \bibinfo{person}{R. Weiss}, \bibinfo{person}{V. Dubourg}, \bibinfo{person}{J.
+  Vanderplas}, \bibinfo{person}{A. Passos}, \bibinfo{person}{D. Cournapeau},
+  \bibinfo{person}{M. Brucher}, \bibinfo{person}{M. Perrot}, {and}
+  \bibinfo{person}{E. Duchesnay}.} \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{Scikit-learn: Machine Learning in {P}ython}.
+\newblock \bibinfo{journal}{{\em Journal of Machine Learning Research\/}}
+  \bibinfo{volume}{12} (\bibinfo{year}{2011}), \bibinfo{pages}{2825--2830}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Sen, Namata, Bilgic, Getoor, Galligher, and
+  Eliassi-Rad}{Sen et~al\mbox{.}}{2008}]%
+        {collective2008}
+\bibfield{author}{\bibinfo{person}{Prithviraj Sen}, \bibinfo{person}{Galileo
+  Namata}, \bibinfo{person}{Mustafa Bilgic}, \bibinfo{person}{Lise Getoor},
+  \bibinfo{person}{Brian Galligher}, {and} \bibinfo{person}{Tina Eliassi-Rad}.}
+  \bibinfo{year}{2008}\natexlab{}.
+\newblock \showarticletitle{Collective classification in network data}.
+\newblock \bibinfo{journal}{{\em AI magazine\/}} \bibinfo{volume}{29},
+  \bibinfo{number}{3} (\bibinfo{year}{2008}), \bibinfo{pages}{93}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Turner, Khrais, Lloyd, Olgin, Isensee, Vevea,
+  and Carsen}{Turner et~al\mbox{.}}{2016}]%
+        {npr2016}
+\bibfield{author}{\bibinfo{person}{Cory Turner}, \bibinfo{person}{Reema
+  Khrais}, \bibinfo{person}{Tim Lloyd}, \bibinfo{person}{Alexandra Olgin},
+  \bibinfo{person}{Laura Isensee}, \bibinfo{person}{Becky Vevea}, {and}
+  \bibinfo{person}{Dan Carsen}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \bibinfo{title}{Why America's Schools Have A Money Problem}.
+\newblock   (\bibinfo{date}{Apr} \bibinfo{year}{2016}).
+\newblock
+\showURL{%
+\url{https://www.npr.org/2016/04/18/474256366/why-americas-schools-have-a-money-problem}}
+
+
+\end{thebibliography}

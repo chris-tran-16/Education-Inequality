@@ -1,0 +1,80 @@
+%%%% Proceedings format for most of ACM conferences (with the exceptions listed below) and all ICPS volumes.
+\documentclass[sigconf]{acmart}
+% \documentclass[format=acmsmall, review=false, screen=true]{acmart}
+
+
+\usepackage{booktabs} % For formal tables
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+\newcommand{\ms}{\mathcal{S}}
+\newcommand{\mc}{\mathcal}
+
+
+% Copyright
+\setcopyright{none}
+%\setcopyright{acmcopyright}
+%\setcopyright{acmlicensed}
+%\setcopyright{rightsretained}
+%\setcopyright{usgov}
+%\setcopyright{usgovmixed}
+%\setcopyright{cagov}
+%\setcopyright{cagovmixed}
+
+%Conference
+% \acmConference[WOODSTOCK'97]{ACM Woodstock conference}{July 1997}{El
+%   Paso, Texas USA} 
+% \acmYear{1997}
+% \copyrightyear{2016}
+
+
+\acmArticle{4}
+\acmPrice{15.00}
+
+
+
+\begin{document}
+\title{Identifying Key Factors in Improving Education Inequality}
+  
+\author{Christopher Tran}
+\affiliation{%
+    \institution{University of Illinois at Chicago}
+    \streetaddress{1200 W Harrison St}
+    \city{Chicago}
+    \state{Illinois}
+    \postcode{60607}
+}
+\email{ctran29@uic.edu}
+
+
+% \author{Weixin Liu}
+% \affiliation{%
+%     \institution{University of Illinois at Chicago}
+%     \streetaddress{1200 W Harrison St}
+%     \city{Chicago}
+%     \state{Illinois}
+%     \postcode{60607}
+% }
+% \email{wliu53@uic.edu}
+
+
+\begin{abstract}
+Studies have shown the importance of education attainment and equal distribution of education in helping to make income distribution more equal. Socioeconomic status of families such as parental education and social class play a big role in the performance of children in primary and secondary education. School resources also have a large effect on education. Naturally, schools with more technology are able to offer more resources to their students which affects their learning capabilities. In this study, we wish to look at school information along with income data, and decide what key factors we can glean that affect school performance. We treat predicting performance as a binary classification problem. In this way we can measure the predictive power of selected features to determine what key factors could be looked at in improving education inequality. We show that we can predict performance of good v.s. bad schools with high accuracy and verify from other works that poverty level is an important feature in determining a school's proficiency level.
+\end{abstract}
+
+\settopmatter{printacmref=false}
+\renewcommand\footnotetextcopyrightpermission[1]{} % removes footnote with conference information in first column
+\pagestyle{plain} % removes running headers
+
+\maketitle
+
+\input{main-body}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references} 
+
+\end{document}
