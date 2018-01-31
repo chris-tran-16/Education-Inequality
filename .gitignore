@@ -4,4 +4,6 @@ CollectiveClassification.pdf
 Code/data/final_data
 Code/data/school_information.txt
 Code/sc132a.txt
-Report Feedback
+Report
+Report/*
+!Report/Final_Report.pdf
